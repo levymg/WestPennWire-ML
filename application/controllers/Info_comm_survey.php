@@ -8,7 +8,7 @@ class Info_comm_survey extends MY_Controller {
         }
 
 	public function index() {
-		$this->render_view("survey/customer_survey");
+		$this->render_view("survey/info_comm_survey");
 	}
         
         
@@ -84,14 +84,7 @@ class Info_comm_survey extends MY_Controller {
                 }
                 
                 else {
-                    
-                    if($this->input->post("resource") == "customer") {
-                        $resource = "A response to the Customer E-Blast";
-                    } elseif($this->input->post("resource") == "infocomm") {
-                        $resource = "A response to the Info Comm E-Blast";
-                    } else {
-                        $resource = "An organic response";
-                    }
+                   
             
                     $data = array(
 
@@ -114,8 +107,7 @@ class Info_comm_survey extends MY_Controller {
                                 "sales"             =>  $this->input->post("sales"),
                                 "techsupport"       =>  $this->input->post("techsupport"),
                                 "cable"             =>  $this->input->post("cable"),
-                                "fiber"             =>  $this->input->post("fiber"),
-                                "resource"          =>  $resource,
+                                "resource"          =>  "A response to the Info Comm E-Blast",
                                 "comments"          =>  $this->input->post("comments"),
                                 "created_on"        =>  time(),
                                 "ip_address"        =>  $this->input->ip_address()

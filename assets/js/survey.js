@@ -78,21 +78,24 @@ $(function(){
                     
             });
             
-            $("#fiber").find(".on").each(function(index) {
+            if($("#fiber").length > 0) {
+                var uri = "/index.php/customer_survey/submit_survey";
+                $("#fiber").find(".on").each(function(index) {
+                   var value = $(this).data("value");
+                   fields += "&fiber=" + value;
+                });
                 
-               var value = $(this).data("value");
-               
-               fields += "&fiber=" + value;
-            });
+            } else {
+                 var uri = "/index.php/info_comm_survey/submit_survey";
+            }
             
             console.log(fields);
-            
             
             $.ajax({
                 method: "POST",
                 dataType: "json",
                 data: fields,
-                url: "/index.php/home/submit_survey"
+                url: uri
                 
             })
             

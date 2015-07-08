@@ -37,8 +37,15 @@ class Categories extends REST_Controller {
                 );
             }
             else {
+                $data = array(
+                        "category_name" => $this->input->post('category_name'),
+                        "category_desc" => $this->input->post('category_desc'),
+                        "category_limit" => $this->input->post('category_limit'),
+                        "created_on" => time()
+                );
+                $this->categories_mdl->insert("lmgi_wpwm.wpwm_marketing_item_categories", $data);
                 $this->response(
-                        "Category created", 
+                        array("message" => "Category created"), 
                         200
                 );
             }

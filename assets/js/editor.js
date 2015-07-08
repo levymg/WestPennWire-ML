@@ -39,10 +39,13 @@ $(function(){
                         var error = data.message;
                         $(".modal-content").find(".form-errors").addClass("show");
                         $(".errors").html(error);
+                        
           },
           success: function(jqXHR, xhr, responseText) {
+                        var data = JSON.parse(jqXHR.responseText);
+                        var error = data.message;
                         $(".modal-content").find(".form-errors").addClass("show");
-                        console.log("<span class='label labe-success'><p>"+jqXHR.responseText+"</p></span>");
+                         $(".errors").html(error);
           }
       });
    });
