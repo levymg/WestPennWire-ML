@@ -35,17 +35,17 @@ $(function(){
           data: formData,
           url: route,
           error: function(jqXHR, xhr, responseText) {
+                        console.log(JSON.stringify(jqXHR));
                         var data = JSON.parse(jqXHR.responseText);
                         var error = data.message;
                         $(".modal-content").find(".form-errors").addClass("show");
                         $(".errors").html(error);
-                        
           },
           success: function(jqXHR, xhr, responseText) {
                         var data = JSON.parse(jqXHR.responseText);
-                        var error = data.message;
+                        var message = data.message;
                         $(".modal-content").find(".form-errors").addClass("show");
-                         $(".errors").html(error);
+                        $(".errors").html(message);
           }
       });
    });

@@ -59,7 +59,7 @@ class Items extends REST_Controller {
         }
     }
     
-    function items_get_ by_category($category_id) {
+    function items_get_by_category($category_id) {
         
             if(!$this->input->post("token")) {
               $this->response("Request not allowed.", 403);
@@ -71,7 +71,7 @@ class Items extends REST_Controller {
                     $this->response(
                             $message,
                             400
-                    )
+                    );
                 }
                  else {
                     $this->response(
@@ -81,5 +81,4 @@ class Items extends REST_Controller {
                         }
                     }
                 }
-    
-            
+}

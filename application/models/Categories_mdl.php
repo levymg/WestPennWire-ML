@@ -2,7 +2,7 @@
 
 class Categories_mdl extends MY_Model {
 
-        public $table = "wpwm_marketing_item_categories";
+        public $_table = "wpwm_marketing_item_categories";
         
         public $categories; 
         
@@ -41,14 +41,17 @@ class Categories_mdl extends MY_Model {
         public function get_all_categories() {
             
             $this->db->select("*");
-            $this->db->from($this->table);
+            $this->db->from($this->_table);
             $query = $this->db->get();
             
             
             if($query->num_rows() > 0 ) {
                 foreach($query->row() as $row) {
-                    return TRUE;
+                    $categories[] = $row->category_name;
                 }
+                
+                return $categories;
+                
             }
             else {
                 return FALSE;
