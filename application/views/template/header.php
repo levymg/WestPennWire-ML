@@ -21,6 +21,7 @@
         <?php if(isset($editor)): ?>
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/dropzone.css">
         <?php endif; ?>
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/theme.css">
         <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/favicon.ico" type="image/vnd.microsoft.icon" />
         <script src="//use.typekit.net/rgq8ybw.js"></script>
         <script>try{Typekit.load();}catch(e){}</script>
@@ -31,6 +32,14 @@
     <div class="head">
         <div class="container">
             <div class="row">
+                <?php if($this->session->userdata("username") && !$this->session->userdata("token")): ?>
+                    <div class="col-lg-3 col-lg-push-1 margintop-5">
+                            <div class="panel-body">
+                                <i class="fa fa-user"></i> <strong><?php echo $this->session->userdata("username"); ?></strong>
+                                <a href="auth/logout" class="btn btn-sm btn-danger">Logout</a>
+                            </div>
+                    </div>
+                <?php endif; ?>
                 <div class="pull-right margintop-5">
                     <a href="http://www.westpenn-wpw.com" target="_blank"><img src="<?php echo base_url(); ?>assets/img/logo.png" alt="West Penn Wire" class="img-responsive" /></a>
                 </div>

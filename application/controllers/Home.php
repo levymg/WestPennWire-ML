@@ -8,7 +8,13 @@ class Home extends MY_Controller {
         }
 
 	public function index() {
-		$this->render_view("home");
+            
+            if($this->session->userdata("username")) {
+                $this->render_view("library/success");
+            } else {
+                $this->render_view("library/auth");
+            }
+		
 	}
         
        

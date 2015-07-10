@@ -1,4 +1,4 @@
-<?php include_once('includes/header.php'); ?>
+<?php $this->load->view("library/template/nav"); ?>
 <div class="login container">
   <div class="row">
     <div class="col-xs-7">
@@ -10,11 +10,10 @@ Click on any of the links above to view our current inventory of marketing mater
     </div>
     <div class="col-xs-2 visible-sm-* visible-md-* visible-lg-* hidden-xs"></div>
     <div class="col-xs-12 col-sm-3">
-      <?php include_once('includes/new-additions.php'); ?>
+      <?php $this->load->view("library/template/sidebar"); ?>
     </div>
     <div class="col-xs-12">
       <div class="spacer"></div>
     </div>
   </div>
 </div>
-<?php include_once('includes/footer.php'); ?>

@@ -1,4 +1,4 @@
-<?php include_once('includes/header.php'); ?>
+
 <div class="login container">
   <div class="row">
     <div class="col-xs-12 col-sm-8">
@@ -10,19 +10,24 @@
     </div>
     <div class="col-xs-12">
       <div class="login-box">
+        <?php if ($this->session->flashdata('error')): ?>
+          <div class="alert alert-danger">
+              <?php echo $this->session->flashdata("error"); ?>
+          </div>
+        <?php endif; ?>
         <h2>Log in using your email:</h2>
-        <form>
+        <form action="auth/dologin" method="POST">
 
           <div class="form-style">
             <label>Email</label>
 
-            <input type="text" name="name" autofocus>
+            <input type="text" name="username" autofocus>
           </div>
           <div style="clear:both;"></div>
           <br />
 
 
-          <input  type="submit">
+          <input class="btn btn-default" type="submit" value="Login">
         </form>
       </div>
 
@@ -30,4 +35,3 @@
     </div>
   </div>
 </div>
-<?php include_once('includes/footer.php'); ?>

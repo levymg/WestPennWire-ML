@@ -1,4 +1,4 @@
-<?php include_once('includes/header.php'); ?>
+<?php $this->load->view("library/template/nav"); ?>
 <div class="library container">
   <div class="row">
     <div class="col-xs-12 col-sm-8">
@@ -54,4 +54,3 @@
     </div>
   </div>
 </div>
-<?php include_once('includes/footer.php'); ?>
