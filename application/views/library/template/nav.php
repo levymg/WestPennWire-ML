@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-xs-12">
         <ul>
-          <li><a href="library/home">Home</a></li><li> | </li>
+          <li><a href="home">Home</a></li><li> | </li>
           <li><a href="#" data-category_id="14">Catalogs</a></li><li> | </li>
           <li><a href="#" data-category_id="16">Brochures</a></li><li> | </li>
           <li><a href="#" data-category_id="29">Tech Data</a></li><li> | </li>

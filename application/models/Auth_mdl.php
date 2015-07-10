@@ -54,7 +54,7 @@ class Auth_mdl extends MY_Model {
             
             $response = new StdClass();
             
-            $this->db->select("user_id, email, active, last_login");
+            $this->db->select("user_id, email, first_name, last_name, active, last_login");
             
             $this->db->from("wpwm_marketing_users");
             
@@ -69,11 +69,14 @@ class Auth_mdl extends MY_Model {
                                     "last_login" => time()
                              );
                 
+                $this->db->where("email", $creds['email']);
                 $this->db->update("wpwm_marketing_users", $last_login);
                
                 $response->status = 200;
                 $response->user_id = $query->row('user_id');
                 $response->username = $query->row('email');
+                $response->first_name = $query->row("first_name");
+                $response->last_name = $query->row("last_name");
                 $response->last_login = $query->row("last_login");
                 
             }
