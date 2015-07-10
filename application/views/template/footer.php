@@ -39,6 +39,9 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/survey.js"></script>
 <?php endif; ?>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/fastclick.js"></script>
+<?php if($this->session->userdata("username")): ?>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/app.js"></script>
+<?php endif; ?>
 <?php if($this->session->userdata("token")): ?>
 <script>
 var token = <?php echo json_encode($this->session->userdata("token")); ?>;
