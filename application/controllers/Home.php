@@ -5,16 +5,26 @@ class Home extends MY_Controller {
     
         public function __construct() {
             parent::__construct();
+            $this->load->model("items_mdl");
         }
 
 	public function index() {
             
             if($this->session->userdata("username")) {
-                $this->render_view("library/success");
+                $object["controller"] = $this;
+                $this->render_view("library/success", $object);
             } else {
                 $this->render_view("library/auth");
             }
 		
 	}
+        
+        public function sidebar() {
+            
+            $items = $this->items_mdl->get_latest("items");
+            
+            return $items;
+            
+        }
         
 }

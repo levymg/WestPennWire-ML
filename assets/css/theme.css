@@ -69,7 +69,7 @@ body{
 }
 .spacer{
   border-top: 10px solid #8dc63f;
-  min-height: 400px;
+  min-height: 20px;
 }
 .featured{
   border-top: 5px solid #8dc63f;
@@ -180,5 +180,8 @@ body{
   }
   .featured h1{
     text-align: center;
+  }
+  .featured > h3 {
+      font-size: 1.4vw !important;
   }
 }

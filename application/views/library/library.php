@@ -1,56 +1,38 @@
-<?php $this->load->view("library/template/nav"); ?>
 <div class="library container">
   <div class="row">
     <div class="col-xs-12 col-sm-8">
-      <h1>Tech Data Sheets</h1>
+      <h1><?php echo $category->category_name; ?></h1>
 
-      <!-- Injection area for returned objects -->
       <div class="row">
-        <div class="download-area col-xs-6">
-          <h2>Custom Cables/Wire Harnesses</h2>
-          <img class="img-responsive" src="assets/img/pdf-example.png" />
-          <div class="links">
-            <ul>
-              <li><a href="">Download a PDF</a></li>
-              <li> | </li>
-              <li><a href="">Email a PDF</a></li>
-            </ul>
+          <?php if(!$data): ?>
+          <div class="col-xs-12">
+              <div class="alert alert-danger">
+                <h2>No materials were found under this category.</h2>
+              </div>
           </div>
-          <form>
-            <label>Request Hard Copies</label><br />
-            <input type="text"></input>
-            <input type="submit" />
-          </form>
-        </div>
-        <div class="download-area col-xs-6">
-          <h2>Custom Cables/Wire Harnesses</h2>
-          <img class="img-responsive" src="assets/img/pdf-example.png" />
-          <div class="links">
-            <ul>
-              <li><a href="">Download a PDF</a></li>
-              <li> | </li>
-              <li><a href="">Email a PDF</a></li>
-            </ul>
-          </div>
-          <form>
-            <label>Request Hard Copies</label><br />
-            <input type="text"></input>
-            <input type="submit" />
-          </form>
-        </div>
+          <?php else: ?>
+          <?php foreach($data as $item): ?>
+                <div class="download-area col-xs-6">
+                  <h2><?php echo $item['item_name']; ?></h2>
+                  <img class="img-responsive" src="http://www.westpennwiremarketing.com/library-assets/thumbs/<?php echo $item['item_thumbnail']; ?>" />
+                  <div class="links">
+                    <ul>
+                      <li><a href="<?php echo $item['item_location']; ?>/<?php echo $item['item_filename']; ?>" target="_blank">Download a PDF</a></li>
+                      <li> | </li>
+                      <li><a href="">Email a PDF</a></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <form class="add" method="POST" data-item_id="<?php echo $item['item_id'] ?>">
+                      <label>Request Hard Copies (Limit: <?php echo $category->category_limit; ?>)</label><br />
+                      <input type="number" />
+                      <input type="submit" />
+                    </form>
+                  </div>
+                </div>
+        <?php endforeach; ?>
+        <?php endif; ?>
       </div>
-      <!-- end -->
-    </div>
-    <div class="col-xs-2 col-sm-1 visible-sm-* visible-md-* visible-lg-* hidden-xs"></div>
-
-    <div class="col-xs-3 visible-sm-* visible-md-* visible-lg-* hidden-xs">
-
-      <?php include_once('includes/new-additions.php'); ?>
-
-    </div>
-
-    <div class="col-xs-12">
-      <div class="spacer"></div>
+      </div>
     </div>
   </div>
-</div>

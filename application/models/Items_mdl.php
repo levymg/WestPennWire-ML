@@ -57,4 +57,13 @@ class Items_mdl extends MY_Model {
             }
         }
         
+        public function get_latest() {
+            
+            $this->db->order_by('updated_on', 'DESC');
+            $this->db->limit(1);
+            $query = $this->db->get($this->_table);
+            
+            return $query->result();
+        }
+        
 }
