@@ -18,6 +18,9 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-theme.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome.min.css">
+        <?php if(isset($editor)): ?>
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/dropzone.css">
+        <?php endif; ?>
         <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/favicon.ico" type="image/vnd.microsoft.icon" />
         <script src="//use.typekit.net/rgq8ybw.js"></script>
         <script>try{Typekit.load();}catch(e){}</script>

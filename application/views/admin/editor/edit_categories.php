@@ -10,6 +10,7 @@
                         <span class="clearfix"></span>
                     </h3>
                 </div>
+                <form id="editor" method="POST" action="">
                 <div class="panel-body">
                     <?php if($categories == NULL): ?>
                     <h3><span class="glyphicon glyphicon-warning-sign"></span> There don't seem to be any categories</h3>
@@ -20,14 +21,18 @@
                                     <th>Category ID</th>
                                     <th>Title</th>
                                     <th>Description</th>
-                                    <th>Select <label for="all" class="pull-right"><input type="checkbox" /></label></th>
+                                    <th>Order Limit</th>
+                                    <th>Edit</th>
+                                    <th>Select <label for="all" class="pull-right"><input type="checkbox" id="selecctall" /></label></th>
                                 </tr>
                                 <?php foreach($categories as $category): ?>
                                 <tr>
-                                    <td><?php echo $category->cid; ?></td>
-                                    <td><?php echo $category->name; ?></td>
-                                    <td><?php echo $category->def; ?></td>
-                                    <td><label for="<?php echo $category->cid; ?>" class="pull-right"><input type="checkbox" /></label></td>
+                                        <td><?php echo $category->category_id; ?></td>
+                                        <td><?php echo $category->category_name; ?></td>
+                                        <td><?php echo $category->category_desc; ?></td>
+                                        <td><?php echo $category->category_limit; ?></td>
+                                        <td><a class="btn btn-warning launch-modal" href="#" data-type="category" data-resource="<?php echo $category->category_id; ?>" data-route="manage_content/edit">Edit</a></td>
+                                        <td><label for="<?php echo $category->category_id; ?>" class="pull-right"><input type="checkbox" name="category_id[]" data-type="category" class="checkbox1" value="<?php echo $category->category_id; ?>" /></label></td>
                                 </tr>
                                 <?php endforeach; ?>
                             </table>
@@ -35,8 +40,14 @@
                     <?php endif; ?>
                 </div>
                 <div class="panel-footer">
-                    
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <a class="btn btn-danger delete-record" href="#" data-type="category">Delete Selected</a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
+                </form>
             </div>
         </div>
     </div>

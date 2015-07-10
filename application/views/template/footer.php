@@ -32,6 +32,9 @@
 </div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+<?php if(isset($order)): ?>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/catalog.js"></script>
+<?php endif; ?>
 <?php if(!isset($editor)): ?>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/survey.js"></script>
 <?php endif; ?>
@@ -43,6 +46,7 @@ var token = <?php echo json_encode($this->session->userdata("token")); ?>;
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/admin.min.js"></script>
 <?php if(isset($editor)): ?>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/editor.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/dropzone.js"></script>
 <?php endif; ?>
 <?php endif; ?>
 </body>

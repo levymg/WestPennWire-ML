@@ -37,20 +37,39 @@ class Categories extends REST_Controller {
                 );
             }
             else {
-                $data = array(
-                        "category_name" => $this->input->post('category_name'),
-                        "category_desc" => $this->input->post('category_desc'),
-                        "category_limit" => $this->input->post('category_limit'),
-                        "created_on" => time()
-                );
-                $this->categories_mdl->add_category($data);
-                $this->response(
-                        array("message" => "Category created"), 
-                        200
-                );
+                if($this->input->post("category_id")) {
+                        $data = array(
+                                "category_name" => $this->input->post("category_name"),
+                                "category_desc" => $this->input->post('category_desc'),
+                                "category_limit" => $this->input->post("category_limit"),
+                                "updated_on" => time()
+                        );
+                        $id = $this->categories_mdl->update($this->input->post("category_id"), $data);
+                        if($id) {
+                            $this->response(
+                            array("message" => "Category updated"), 
+                            200
+                        );
+                    }
+                } else {
+                        $data = array(
+                                "category_name" => $this->input->post('category_name'),
+                                "category_desc" => $this->input->post('category_desc'),
+                                "category_limit" => $this->input->post('category_limit'),
+                                "created_on" => time()
+                        );
+                        $this->categories_mdl->add_category($data);
+                        $category_path = preg_replace('#[ -]+#', '-', $data["category_name"]);
+                        if (!is_dir('./library-assets/'.strtolower($category_path))) {
+                            mkdir('./library-assets/' . strtolower($category_path), 0777, TRUE);
+                        }
+                        $this->response(
+                                array("message" => "Category created"), 
+                                200
+                        );
+                }
             }
         }
-        
     }
 
     function categories_delete() {

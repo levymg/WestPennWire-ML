@@ -6582,3 +6582,8 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+.dz-default {
+    height: 200px;
+    border: 1px dashed #000;
+}
