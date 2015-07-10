@@ -12,7 +12,6 @@ $(function(){
                 type: "json",
                 url: api+"items/items/category_id/"+category_id,
                 success: function(jqXHR, xhr, responseText) {
-                    
                                     $.ajax({
                                         method: "POST",
                                         type: "json",
@@ -22,8 +21,31 @@ $(function(){
                                              $(".dynamic-view").html(jqXHR.html);
                                         }
                                     });
-                                
                         }
             });
+    });
+});
+
+$(function(){
+    
+    $("body").on("submit", ".add", function() { 
+            var data = $(this).serialize();
+            $.ajax({
+                method: "POST",
+                type: "json",
+                data: data,
+                url: api+"bin/add",
+                success: function(jqXHR, xhr, responseText) {
+                    console.log(JSON.stringify(jqXHR));
+                    console.log(xhr);
+                    console.log(responseText);
+                },
+                fail: function(jqXHR, xhr, responseText) {
+                    console.log(JSON.stringify(jqXHR));
+                    console.log(xhr);
+                    console.log(responseText);
+                }
+            });
+        return false;
     });
 });

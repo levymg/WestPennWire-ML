@@ -9,7 +9,7 @@
           <li><a href="#" class="change-category" data-category_id="29">Tech Data</a></li><li> | </li>
           <li><a href="#" class="change-category" data-category_id="18">Ads</a></li><li> | </li>
           <li><a href="#" class="change-category" data-category_id="19">Mailers</a></li><li> | </li>
-          <li><a href="#" class="change-category" data-category_id="30">Business Cards</a></li><li> | </li>
+          <li><a href="#" class="change-category" data-category_id="30">Biz Cards</a></li><li> | </li>
           <li><a href="#" class="change-category" data-category_id="21">Surveys</a></li><li> | </li>
           <li><a href="#" class="change-category" data-category_id="22">PR</a></li><li> | </li>
           <li><a href="#" class="change-category" data-category_id="23">Powerpoints</a></li><li> | </li>

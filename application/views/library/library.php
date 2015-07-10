@@ -23,10 +23,11 @@
                     </ul>
                   </div>
                   <div>
-                    <form class="add" method="POST" data-item_id="<?php echo $item['item_id'] ?>">
+                    <form class="add" method="POST">
                       <label>Request Hard Copies (Limit: <?php echo $category->category_limit; ?>)</label><br />
-                      <input type="number" />
-                      <input type="submit" />
+                      <input type="number" name="quantity" required />
+                      <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?>" />
+                      <input type="submit" value="Add to Bin" />
                     </form>
                   </div>
                 </div>

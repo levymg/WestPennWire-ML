@@ -71,18 +71,17 @@ body{
   border-top: 10px solid #8dc63f;
   min-height: 20px;
 }
-.featured{
-  border-top: 5px solid #8dc63f;
-}
-.featured img{
-  width: 80%;
-  padding: 5px;
+
+.featured h1 {
+    border-bottom: 5px solid #8dc63f;
 }
 
 
 /* library styles */
 .library h1{
   font-size: 30px;
+  font-weight: 800;
+  border-bottom: 5px solid #8dc63f;
   color: #0b9444;
 }
 .library h2{
