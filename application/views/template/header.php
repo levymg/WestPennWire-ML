@@ -37,8 +37,8 @@
                             <div class="panel-footer">
                                  <i class="fa fa-user"></i> <strong><?php echo $this->session->userdata("username"); ?></strong> | <i class="glyphicon glyphicon-time"></i> Last Login: <?php echo date('m/d/y h:i a', $this->session->userdata("last_login")); ?>
                             <div class="btn-group">
-                                <a href="user/bin" class="btn btn-sm btn-primary"> <i class="fa fa-cart-arrow-down"></i> My Bin</a>
-                                <a href="auth/logout" class="btn btn-sm btn-danger"> <i class="fa fa-sign-out"></i> Logout</a>
+                                <a href="<?php echo base_url(); ?>home/bin" class="btn btn-sm btn-primary"> <i class="fa fa-cart-arrow-down"></i> My Bin</a>
+                                <a href="<?php echo base_url(); ?>auth/logout" class="btn btn-sm btn-danger"> <i class="fa fa-sign-out"></i> Logout</a>
                             </div>
                             </div>
                     </div>

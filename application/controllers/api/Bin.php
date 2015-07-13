@@ -10,6 +10,7 @@ class Bin extends REST_Controller {
         parent::__construct();
         $this->load->model("categories_mdl");
         $this->load->model("items_mdl");
+        $this->load->model("bin_mdl");
         $this->load->library("form_validation");
     }
 
@@ -29,15 +30,18 @@ class Bin extends REST_Controller {
         $item_id = $this->input->post("item_id");
         $quantity = $this->input->post("quantity");
         
-        $category = $this->items_mdl->get($item_id);
+        $item_category = $this->items_mdl->get($item_id);
+        $category = $this->categories_mdl->get($item_category->item_category);
         $category_limit = $category->category_limit;
         
         if($quantity > $category_limit) {
-            $this->response($quantity, 400);
+            $this->response(array("error" => "You have exceeded the quantity allowed."), 400);
         }
         else {
-            $this->response(array("message" => $category->item_name . " has been added to your bin"), 200);
+            $
+            $this->response(array("message" => $item_category->item_name. " (" . $quantity . ") has been added to your bin."), 200);
         }
+        
         
     }
     

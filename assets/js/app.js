@@ -23,12 +23,14 @@ $(function(){
                                     });
                         }
             });
+            
+            return false;
     });
 });
 
 $(function(){
     
-    $("body").on("submit", ".add", function() { 
+    $("body").on("submit", ".add", function() {
             var data = $(this).serialize();
             $.ajax({
                 method: "POST",
@@ -37,13 +39,9 @@ $(function(){
                 url: api+"bin/add",
                 success: function(jqXHR, xhr, responseText) {
                     console.log(JSON.stringify(jqXHR));
-                    console.log(xhr);
-                    console.log(responseText);
                 },
                 fail: function(jqXHR, xhr, responseText) {
                     console.log(JSON.stringify(jqXHR));
-                    console.log(xhr);
-                    console.log(responseText);
                 }
             });
         return false;

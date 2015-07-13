@@ -22,6 +22,14 @@
                                 </div>
                         </div>
                         <div class="form-group">
+                            <label for="category_order" class="col-sm-6">Hard Copies Available?</label>
+                            <div class="input-group col-sm-6">
+                                            <label for="radio1">Yes <input type="radio" name="request" value="1" <?php if($category->request == 1): ?>checked<?php endif; ?> /></label> 
+                                            <label for="radio2">No <input type="radio" name="request" value="0"  <?php if($category->request == 0): ?>checked<?php endif; ?> /></label>
+                                <span class="clearfix"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="category_limit" class="col-sm-6">Order Limit</label>
                             <div class="input-group col-sm-6">
                                 <input type="number" name="category_limit" class="form-control" placeholder="Number of units allowed to be ordered" value="<?php echo $category->category_limit; ?>" />

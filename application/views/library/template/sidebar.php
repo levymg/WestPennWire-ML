@@ -7,10 +7,11 @@
             <h3><?php echo $item->item_name; ?></h3>
         </div>
         <div class="panel-body">
-            <img class="img-responsive" src="library-assets/thumbs/<?php echo $item->item_thumbnail; ?>" />
+            <img class="img-responsive" src="<?php echo base_url(); ?>library-assets/thumbs/<?php echo $item->item_thumbnail; ?>" />
         </div>
     </div>
 <?php endforeach; ?>
 </div>
+
 
 

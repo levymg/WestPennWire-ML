@@ -76,6 +76,10 @@ body{
     border-bottom: 5px solid #8dc63f;
 }
 
+form.add label {
+    color: #fff;
+}
+
 
 /* library styles */
 .library h1{

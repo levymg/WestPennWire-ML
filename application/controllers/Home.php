@@ -22,7 +22,6 @@ class Home extends MY_Controller {
         public function sidebar() {
             
             $items = $this->items_mdl->get_latest("items");
-            
             return $items;
             
         }

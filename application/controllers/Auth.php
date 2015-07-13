@@ -10,6 +10,10 @@ class Auth extends MY_Controller {
             
         }
         
+        public function renderAuth() {
+            $this->render_view("library/auth");
+        }
+        
         public function dologin() {
             
             $username = $this->input->post("username");

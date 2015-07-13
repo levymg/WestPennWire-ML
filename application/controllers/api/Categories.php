@@ -29,6 +29,7 @@ class Categories extends REST_Controller {
             $this->form_validation->set_rules('category_name', 'Category Name', 'required');
             $this->form_validation->set_rules('category_desc', 'Category Description', 'required');
             $this->form_validation->set_rules('category_limit', 'Order Limit', 'required');
+            $this->form_validation->set_rules('request', 'Order Hard Copies', 'required');
             if ($this->form_validation->run() == FALSE) {
                 $message = array('message' => validation_errors());
                 $this->response(
@@ -42,6 +43,7 @@ class Categories extends REST_Controller {
                                 "category_name" => $this->input->post("category_name"),
                                 "category_desc" => $this->input->post('category_desc'),
                                 "category_limit" => $this->input->post("category_limit"),
+                                "request" => $this->input->post("request"),
                                 "updated_on" => time()
                         );
                         $id = $this->categories_mdl->update($this->input->post("category_id"), $data);
@@ -56,6 +58,7 @@ class Categories extends REST_Controller {
                                 "category_name" => $this->input->post('category_name'),
                                 "category_desc" => $this->input->post('category_desc'),
                                 "category_limit" => $this->input->post('category_limit'),
+                                "request" => $this->input->post("request"),
                                 "created_on" => time()
                         );
                         $this->categories_mdl->add_category($data);

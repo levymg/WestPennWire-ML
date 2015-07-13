@@ -12,7 +12,7 @@
           </div>
           <?php else: ?>
           <?php foreach($data as $item): ?>
-                <div class="download-area col-xs-6">
+                <div class="download-area col-md-6">
                   <h2><?php echo $item['item_name']; ?></h2>
                   <img class="img-responsive" src="http://www.westpennwiremarketing.com/library-assets/thumbs/<?php echo $item['item_thumbnail']; ?>" />
                   <div class="links">
@@ -22,15 +22,19 @@
                       <li><a href="">Email a PDF</a></li>
                     </ul>
                   </div>
-                  <div>
-                    <form class="add" method="POST">
-                      <label>Request Hard Copies (Limit: <?php echo $category->category_limit; ?>)</label><br />
-                      <input type="number" name="quantity" required />
-                      <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?>" />
-                      <input type="submit" value="Add to Bin" />
-                    </form>
-                  </div>
-                </div>
+                      <?php if($category->request == 1): ?>
+                      <div>
+                            <form class="add" method="POST">
+                              <label>Request Hard Copies (Limit: <?php echo $category->category_limit; ?>)</label><br />
+                              <input type="number" name="quantity" required />
+                              <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?>" />
+                              <input type="submit" value="Add to Bin" />
+                            </form>
+                          </div>
+                        </div>
+                    <?php else: ?>
+                        </div>
+                    <?php endif; ?>
         <?php endforeach; ?>
         <?php endif; ?>
       </div>

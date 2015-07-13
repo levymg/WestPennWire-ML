@@ -16,7 +16,7 @@
           </div>
         <?php endif; ?>
         <h2>Log in using your email:</h2>
-        <form action="auth/dologin" method="POST">
+        <form action="<?php echo base_url(); ?>auth/dologin" method="POST">
 
           <div class="form-style">
             <label>Email</label>
