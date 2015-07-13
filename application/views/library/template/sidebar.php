@@ -9,6 +9,9 @@
         <div class="panel-body">
             <img class="img-responsive" src="<?php echo base_url(); ?>library-assets/thumbs/<?php echo $item->item_thumbnail; ?>" />
         </div>
+        <div class="panel-footer">
+            <a class="btn btn-block btn-success change-category" href="#" data-category_id="<?php echo $item->item_category; ?>">View</a>
+        </div>
     </div>
 <?php endforeach; ?>
 </div>

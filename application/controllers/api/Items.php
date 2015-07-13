@@ -55,14 +55,15 @@ class Items extends REST_Controller {
                     $path = $this->categories_mdl->get_by(array("category_id" => $data['item_category']));
                     $item_id = $this->items_mdl->insert($data);
                     if($item_id) {
+                        $real_path = preg_replace('#[ -]+#', '-', $path->category_name);
                         $this->response(
                                 array(
                                         "message" => "upload",
-                                        "path" => strtolower($path->category_name),
+                                        "path" => strtolower($real_path),
                                         "item_id" => $item_id,
                                         "title" => "<span class='glyphicon glyphicon-cloud-upload'></span> Upload File",
                                         "body" => '<div class="col-lg-12">
-                                                        <form action="'.base_url().'"manage_content/file-upload?path='.strtolower($path->category_name).'" class="dropzone" id="dropzone" enctype="multipart/form-data">
+                                                        <form action="'.base_url().'"manage_content/file-upload?path='.strtolower($real_path).'" class="dropzone" id="dropzone" enctype="multipart/form-data">
 
                                                         </form>
                                                     </div>

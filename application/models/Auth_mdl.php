@@ -2,6 +2,9 @@
 
 class Auth_mdl extends MY_Model {
 
+    public $_table = "wpwm_marketing_users";
+    public $primary_key = "user_id";
+    
 	public function __construct()
         {
             

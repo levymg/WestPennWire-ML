@@ -27,6 +27,7 @@ class Auth extends MY_Controller {
                 $this->session->set_userdata("login_status", "OK");
                 $this->session->set_userdata("last_login", $response->last_login);
                 $this->session->set_userdata("username", $response->username);
+                $this->session->set_userdata("user_id", $response->user_id);
                 $this->session->set_userdata("first_name", $response->first_name);
                 $this->session->set_userdata("last_name", $response->last_name);
                 
