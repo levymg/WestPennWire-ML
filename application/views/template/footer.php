@@ -1,20 +1,31 @@
-<div class="foot">
-    <div class="container">
-        <div class="pull-left col-lg-6 margintop-5">
-            <a href="http://www.westpenn-wpw.com" target="_blank"><img src="<?php echo base_url(); ?>assets/img/logo.png" alt="West Penn Wire" class="img-responsive" /></a>
-        </div>
-        <div class="pull-left col-lg-6 margintop-5">
-            <address style="font-weight: 700;">
-            2833 West Chestnut Street<br />
-            Washington, PA 15301<br />
-
-            Toll Free: 1-800-245-4964<br />
-            Fax: 1-724-222-6420 
-            </address>
-        </div>
+<div class="container">
+  <div class="signoff-container row">
+    <div class="col-xs-9 col-sm-5">
+      <img class="img-responsive" src="assets/img/logo2.png" />
     </div>
+    <div class="signoff col-xs-3">
+      <p>2833 West Chestnut Street</p>
+      <p>Washington, PA 15301</p>
+      <p>800.245.4964</p>
+    </div>
+    <div class="col-xs-4">
+    </div>
+  </div>
 </div>
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <ul>
+          <li><a href="tel:8002454964">800.245.4964</a></li><li> | </li>
+          <li><a href="mailto:sales@westpenn-wpw.com">sales@westpenn-wpw.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <img class="green-corner" src="assets/img/green-corner.png" />
 </div>
+
 
 <div class="modal fade" id="notification">
     <div class="modal-dialog">

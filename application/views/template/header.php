@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-    
+
     <head>
-        
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        
+
         <!-- meta -->
         <title>West Penn Wire Marketing Survey</title>
         <meta name="description" content="">
@@ -13,7 +13,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="canonical" href="" />
         <!-- end meta -->
-        
+
         <!-- styles & fonts -->
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-theme.css">
@@ -26,14 +26,17 @@
         <script src="//use.typekit.net/rgq8ybw.js"></script>
         <script>try{Typekit.load();}catch(e){}</script>
     </head>
-    
+
     <body>
-        
+
     <div class="head">
         <div class="container">
             <div class="row">
+              <div class="col-xs-12 col-sm-6 pull-right margintop-5">
+                  <a class="pull-right" href="http://www.westpenn-wpw.com" target="_blank"><img src="<?php echo base_url(); ?>assets/img/logo.png" alt="West Penn Wire" class="img-responsive" /></a>
+              </div>
                 <?php if($this->session->userdata("username") && !$this->session->userdata("token")): ?>
-                    <div class="col-lg-6 col-lg-push-1 margintop-5">
+                    <div class="col-xs-12 col-sm-6 col-md-4 pull-right margintop-5">
                             <div class="panel-footer">
                                  <i class="fa fa-user"></i> <strong><?php echo $this->session->userdata("username"); ?></strong> | <i class="glyphicon glyphicon-time"></i> Last Login: <?php echo date('m/d/y h:i a', $this->session->userdata("last_login")); ?>
                             <div class="btn-group">
@@ -43,13 +46,10 @@
                             </div>
                     </div>
                 <?php endif; ?>
-                <div class="pull-right margintop-5">
-                    <a href="http://www.westpenn-wpw.com" target="_blank"><img src="<?php echo base_url(); ?>assets/img/logo.png" alt="West Penn Wire" class="img-responsive" /></a>
-                </div>
             </div>
         </div>
     </div>
-        
+
     <?php if($this->session->userdata('token')): ?>
         <div class="container">
             <div class="row">
